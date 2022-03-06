@@ -6,8 +6,10 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import classNames from "classnames";
 
 const App = () => {
+    const cn = classNames({ a: true });
     return (
         <BrowserRouter>
             <div className="app-wrapper">
