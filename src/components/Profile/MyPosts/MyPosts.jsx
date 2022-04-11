@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import {
   maxLengthCreator,
@@ -32,7 +32,9 @@ let AddNewPostFormRedux = reduxForm({ form: "ProfileAddNewPostForm" })(
   AddNewPostForm
 );
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
+  console.log("RENDER");
+
   let postsElements = props.posts.map((p) => (
     <Post massage={p.message} likesCount={p.likesCount} />
   ));
@@ -49,6 +51,6 @@ const MyPosts = (props) => {
       <div className={s.posts}>{postsElements}</div>
     </div>
   );
-};
+});
 
 export default MyPosts;
